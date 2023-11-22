@@ -1,8 +1,7 @@
 import axios from "axios"
-const apiUrl = process.env.URL 
 
 const getAll = async () => {
-    const res = await axios.get(`${apiUrl}/api/banco/sucursales`)
+    const res = await axios.get(`http://18.229.164.127:4000/api/banco/sucursales`)
     return res.data
 }
 
@@ -44,20 +43,20 @@ const getByFilters = async (filtros) => {
 }
 
 const getSucursal = async (codSucursal) => {
-    const res = await axios.get(`${apiUrl}/api/banco/sucursales/${codSucursal}`)
+    const res = await axios.get(`http://18.229.164.127:4000/api/banco/sucursales/${codSucursal}`)
     return res.data
 }
 
 const deleteSucursal = async (codSucursal) => {
-    await axios.delete(`${apiUrl}/api/banco/sucursales/${codSucursal}`)
+    await axios.delete(`http://18.229.164.127:4000/api/banco/sucursales/${codSucursal}`)
 }
 
 const agregarSucursal = async (sucursal) => {
-    await axios.post(`${apiUrl}/api/banco/sucursales`, sucursal)
+    await axios.post(`http://18.229.164.127:4000/api/banco/sucursales`, sucursal)
 }
 
 const actualizarSucursal = async (codSucursal, sucursal) => {
-    await axios.put(`${apiUrl}/api/banco/sucursales/${codSucursal}`, sucursal)
+    await axios.put(`http://18.229.164.127:4000/api/banco/sucursales/${codSucursal}`, sucursal)
 }
 
 const sucursalesService = {

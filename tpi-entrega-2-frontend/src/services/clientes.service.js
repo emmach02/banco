@@ -1,8 +1,7 @@
 import axios from "axios"
-const apiUrl = process.env.URL 
 
 const getAll = async () => {
-    const res = await axios.get(`${apiUrl}/api/banco/clientes`)
+    const res = await axios.get(`http://18.229.164.127:4000/api/banco/clientes`)
     return res.data
 }
 
@@ -44,20 +43,20 @@ const getByFilters = async (filtros) => {
 }
 
 const getCliente = async (codigoCliente) => {
-    const res = await axios.get(`${apiUrl}/api/banco/clientes/${codigoCliente}`)
+    const res = await axios.get(`http://18.229.164.127:4000/api/banco/clientes/${codigoCliente}`)
     return res.data
 }
 
 const deleteCliente = async (codigoCliente) => {
-    await axios.delete(`${apiUrl}/api/banco/clientes/${codigoCliente}`)
+    await axios.delete(`http://18.229.164.127:4000/api/banco/clientes/${codigoCliente}`)
 }
 
 const agregarCliente = async (cliente) => {
-    await axios.post(`${apiUrl}/api/banco/clientes`, cliente)
+    await axios.post(`http://18.229.164.127:4000/api/banco/clientes`, cliente)
 }
 
 const actualizarCliente = async (codigoCliente, cliente) => {
-    await axios.put(`${apiUrl}/api/banco/clientes/${codigoCliente}`, cliente)
+    await axios.put(`http://18.229.164.127:4000/api/banco/clientes/${codigoCliente}`, cliente)
 }
 
 const clientesService = {
