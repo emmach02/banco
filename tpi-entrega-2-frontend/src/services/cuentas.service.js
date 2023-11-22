@@ -1,7 +1,8 @@
 import axios from "axios"
-const BASE_URL = 'http://localhost:4000/api/banco'
+const apiUrl = process.env.URL 
+
 const getAll = async () => {
-    const res = await axios.get(`${BASE_URL}/cuentas`)
+    const res = await axios.get(`${apiUrl}/cuentas`)
     return res.data
 }
 
@@ -45,21 +46,21 @@ const getByFilters = async (filtros) => {
 }
 
 const getCuenta = async (idCuenta) => {
-    const res = await axios.get(`${BASE_URL}/cuentas/${idCuenta}`)
+    const res = await axios.get(`${apiUrl}/cuentas/${idCuenta}`)
     return res.data
 }
 
 const deleteCuenta = async (idCuenta) => {
-    await axios.delete(`${BASE_URL}/cuentas/${idCuenta}`)
+    await axios.delete(`${apiUrl}/cuentas/${idCuenta}`)
 }
 
 const agregarCuenta = async (cuenta) => {
-    await axios.post(`${BASE_URL}/cuentas`, cuenta)
+    await axios.post(`${apiUrl}/cuentas`, cuenta)
 }
 
 const actualizarCuenta = async (idCuenta, cuenta) => {
     console.log(cuenta)
-    await axios.put(`${BASE_URL}/cuentas/${idCuenta}`, cuenta)
+    await axios.put(`${apiUrl}/cuentas/${idCuenta}`, cuenta)
 }
 
 const cuentasService = {

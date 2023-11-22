@@ -1,7 +1,8 @@
 import axios from "axios"
+const apiUrl = process.env.URL  
 
 const getAll = async () => {
-    const res = await axios.get(`http://localhost:4000/api/banco/localidades`)
+    const res = await axios.get(`${apiUrl}/api/banco/localidades`)
     return res.data
 }
 
@@ -43,20 +44,20 @@ const getByFilters = async (filtros) => {
 }
 
 const getLocalidad = async (CodLocalidades) => {
-    const res = await axios.get(`http://localhost:4000/api/banco/localidades/${CodLocalidades}`)
+    const res = await axios.get(`${apiUrl}/api/banco/localidades/${CodLocalidades}`)
     return res.data
 }
 
 const deleteLocalidad = async (CodLocalidades) => {
-    const res = await axios.delete(`http://localhost:4000/api/banco/localidades/${CodLocalidades}`)
+    const res = await axios.delete(`${apiUrl}/api/banco/localidades/${CodLocalidades}`)
 }
 
 const agregarLocalidad = async (Localidad) => {
-    await axios.post(`http://localhost:4000/api/banco/localidades`, Localidad)
+    await axios.post(`${apiUrl}/api/banco/localidades`, Localidad)
 }
 
 const actualizarLocalidad = async (CodLocalidades, Localidad) => {
-    await axios.put(`http://localhost:4000/api/banco/localidades/${CodLocalidades}`, Localidad)
+    await axios.put(`${apiUrl}/api/banco/localidades/${CodLocalidades}`, Localidad)
 }
 
 const LocalidadesService = {

@@ -12,10 +12,15 @@ const Sucursales = () => {
 
     useEffect(() => {
         const loadSucursales = async () => {
-        const sucursales = await sucursalesService.getSucursales()
-        setSucursales(sucursales)
-        }
-        loadSucursales()
+            try {
+                const sucursales = await sucursalesService.getSucursales();
+                console.log('Sucursales cargadas:', sucursales);
+                setSucursales(sucursales);
+            } catch (error) {
+                console.error('Error al cargar sucursales:', error);
+            }
+        };
+        loadSucursales();
     }, [])
 
     return (
