@@ -59,10 +59,4 @@ sequelize.models.Boletas.belongsTo(sequelize.models.Sucursales, {
     foreignKey: 'CodSucursal'
 })
 
-try {
-    await sequelize.sync();
-} catch (error) {
-    console.log("Error en la conexion a la BD:", error.message);
-}
-
 export default sequelize;
