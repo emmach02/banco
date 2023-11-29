@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const getAll = async () => {
-    const res = await axios.get(`http://18.229.164.127:4000/cuentas`)
+    const res = await axios.get(`http://15.229.7.58:4000/cuentas`)
     return res.data
 }
 
@@ -45,21 +45,21 @@ const getByFilters = async (filtros) => {
 }
 
 const getCuenta = async (idCuenta) => {
-    const res = await axios.get(`http://18.229.164.127:4000/cuentas/${idCuenta}`)
+    const res = await axios.get(`http://15.229.7.58:4000/cuentas/${idCuenta}`)
     return res.data
 }
 
 const deleteCuenta = async (idCuenta) => {
-    await axios.delete(`http://18.229.164.127:4000/cuentas/${idCuenta}`)
+    await axios.delete(`http://15.229.7.58:4000/cuentas/${idCuenta}`)
 }
 
 const agregarCuenta = async (cuenta) => {
-    await axios.post(`http://18.229.164.127:4000/cuentas`, cuenta)
+    await axios.post(`http://15.229.7.58:4000/cuentas`, cuenta)
 }
 
 const actualizarCuenta = async (idCuenta, cuenta) => {
     console.log(cuenta)
-    await axios.put(`http://18.229.164.127:4000/cuentas/${idCuenta}`, cuenta)
+    await axios.put(`http://15.229.7.58:4000/cuentas/${idCuenta}`, cuenta)
 }
 
 const cuentasService = {

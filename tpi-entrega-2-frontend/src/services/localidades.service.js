@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const getAll = async () => {
-    const res = await axios.get(`http://18.229.164.127:4000/api/banco/localidades`)
+    const res = await axios.get(`http://15.229.7.58:4000/api/banco/localidades`)
     return res.data
 }
 
@@ -43,20 +43,20 @@ const getByFilters = async (filtros) => {
 }
 
 const getLocalidad = async (CodLocalidades) => {
-    const res = await axios.get(`http://18.229.164.127:4000/api/banco/localidades/${CodLocalidades}`)
+    const res = await axios.get(`http://15.229.7.58:4000/api/banco/localidades/${CodLocalidades}`)
     return res.data
 }
 
 const deleteLocalidad = async (CodLocalidades) => {
-    const res = await axios.delete(`http://18.229.164.127:4000/api/banco/localidades/${CodLocalidades}`)
+    const res = await axios.delete(`http://15.229.7.58:4000/api/banco/localidades/${CodLocalidades}`)
 }
 
 const agregarLocalidad = async (Localidad) => {
-    await axios.post(`http://18.229.164.127:4000/api/banco/localidades`, Localidad)
+    await axios.post(`http://15.229.7.58:4000/api/banco/localidades`, Localidad)
 }
 
 const actualizarLocalidad = async (CodLocalidades, Localidad) => {
-    await axios.put(`http://18.229.164.127:4000/api/banco/localidades/${CodLocalidades}`, Localidad)
+    await axios.put(`http://15.229.7.58:4000/api/banco/localidades/${CodLocalidades}`, Localidad)
 }
 
 const LocalidadesService = {

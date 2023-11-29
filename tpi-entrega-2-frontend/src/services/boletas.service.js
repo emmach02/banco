@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 const getAll = async () => {
-    const res = await axios.get(`http://18.229.164.127:4000/api/banco/boletas`)
+    const res = await axios.get(`http://15.229.7.58:4000/api/banco/boletas`)
     return res.data
 }
 
@@ -44,20 +44,20 @@ const getByFilters = async (filtros) => {
 }
 
 const getBoleta = async (codigoBoleta) => {
-    const res = await axios.get(`http://18.229.164.127:4000/api/banco/boletas/${codigoBoleta}`)
+    const res = await axios.get(`http://15.229.7.58:4000:4000/api/banco/boletas/${codigoBoleta}`)
     return res.data
 }
 
 const deleteBoleta = async (codigoBoleta) => {
-    await axios.delete(`http://18.229.164.127:4000/api/banco/boletas/${codigoBoleta}`)
+    await axios.delete(`http://15.229.7.58:4000:4000/api/banco/boletas/${codigoBoleta}`)
 }
 
 const agregarBoleta = async (boleta) => {
-    await axios.post(`http://18.229.164.127:4000/api/banco/boletas`, boleta)
+    await axios.post(`http://15.229.7.58:4000:4000/api/banco/boletas`, boleta)
 }
 
 const actualizarBoleta = async (codigoBoleta, boleta) => {
-    await axios.put(`http://18.229.164.127:4000/api/banco/boletas/${codigoBoleta}`, boleta)
+    await axios.put(`http://15.229.7.58:4000:4000/api/banco/boletas/${codigoBoleta}`, boleta)
 }
 
 const boletasService = {
